@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>form</title>
+  <link rel="stylesheet" href="./cac.css">
+  <style type="text/css">
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+    :root{
+        --succes-color: #2ecc71;;
+        --error-color: #e74c3c;
+    }
+
+
+    *{
+        box-sizing: border-box;
+    }
+
+    body{
+
+        background: url(background-learner1.jpg);
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container{
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        width: 600px;
+    }
+
+    h2{
+        text-align: center;
+        margin: 0 0 20px;
+    }
+
+    .form{
+        padding: 30px 40px;
+    }
+
+    .form-control{
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+    .form-control label{
+        color:#777;
+        display: block;
+        margin-bottom: 5px; 
+    }
+     
+    .form-control input
+    {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;   
+    }
+
+    .form-control textarea
+    {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;   
+    }
+
+    .form-control input:focus{
+        outline: 0;
+        border-color: #777;
+
+    }
+
+    .form-control.success input {
+        border-color: var(--succes-color);
+    }
+
+    .form-control.error input {
+        border-color: var(--error-color);    
+    }
+
+    .form-control small{
+        color: var(--error-color);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+    }
+
+    .form-control.error small{
+        visibility: visible;
+    }
+    .form button {
+        cursor: pointer;
+        background-color: #3498db;
+        border: 2px solid #3498db;
+        border-radius: 4px;
+        color: #fff;
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        margin-top:20px;
+        width:100px;
+    }
+
+    .divider {
+          margin: 0.5em 0 0.5em 0;
+          border: 0;
+          height: 1px;
+          width: 100%;
+          display: block;
+          background-color: #4f6fad;
+          background-image: linear-gradient(to right, #ee9cb4, #4f6fad);
+    }
+
+    .row.header {
+          padding: 1.5em 2.5em;
+          border-bottom: 1px solid #ccc;
+          background: url(https://images2.imgbox.com/a5/2e/m3lRbCCA_o.jpg) left -80px;
+          color: #fff;
+    }
+  </style>
+
+  
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+        <form id="form" class="form">
+            <div class="row header">
+                <h1>FEEDBACK FORM &nbsp;</h1>
+                <h3>Fill out the form below for survey!</h3>
+            </div>
+            <div class="form-control">
+                <br><label for="username">Username</label>
+                <input onkeypress="return test(event)" type="text" id="username" placeholder="Enter Username">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter email">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="Enter address">
+                <small>Error Message</small>
+            </div>
+            <div class="">
+                <label style="color:#777;display: block; margin-bottom: 5px;" for="checkbox">Your Likings</label>
+                <input type="checkbox" id="quality1" name="quality1" value="Student">   I liked the behaviour of students <br>
+                <input type="checkbox" id="quality2" name="quality2" value="Location">   I loved the location of the campus <br>
+                <input type="checkbox" id="quality3" name="quality3" value="Campus">     Campus is very good <br>
+                <input type="checkbox" id="quality4" name="quality4" value="Atmosphere">     Atmosphere is very good <br>
+                <input type="checkbox" id="quality5" name="quality5" value="Rooms">     Rooms is very good ahs more space <br>
+                <input type="checkbox" id="quality6" name="quality6" value="Sports">     More no of sports are there <br>
+            </div>
+            <div class="">
+                <br><label style="color:#777;display: block; margin-bottom: 5px;" for="checkbox">How You Get To Know</label>
+                <input type="radio" id="frnd" name="fav_language" value="frnd"> Friends <br>
+                <input type="radio" id="tv" name="fav_language" value="tv"> Television <br>
+                <input type="radio" id="net" name="fav_language" value="net"> Internet <br>
+                <input type="radio" id="other" name="fav_language" value="other"> Other <br>
+            </div>
+
+            <br><div class="divider"></div><br>
+            <div class="form-control">
+                <label for="comments">Comments</label>
+                <textarea cols="68" rows="10" name="comments"></textarea>
+                <small>Error Message</small>
+            </div>
+           
+              <button style="margin-top: 50px; margin-left: 100px;">Submit</button>
+              <button style="margin-top: -40px; margin-left: 300px;" type="reset">Reset</button>
+           
+        </form>
+    </div>
+<!-- partial -->
+  <script  src="./cac.js"></script>
+
+</body>
+</html>
