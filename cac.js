@@ -76,6 +76,15 @@ function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
+function checkcheckbox(input){
+    if (input.value.quality1.checked) {
+       alert("select one");
+    }
+    else 
+    {
+        alert("success");
+    }
+}
 
 
 //Event Listeners
@@ -87,4 +96,5 @@ form.addEventListener('submit',function(e) {
     checkLength(password,6,25);
     checkEmail(email);
     checkPassword(password);
+    checkcheckbox(quality);
 });
